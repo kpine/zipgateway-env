@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
@@ -17,26 +17,28 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8 C.UTF-8/' /etc/locale.gen
 RUN dpkg --add-architecture i386
 
 RUN apt-get update && apt-get install -y \
-    doxygen \ 
+    doxygen \
     graphviz \
-    mscgen \ 
+    mscgen \
     roffit \
     perl \
     git \
-    python \
+    python3 \
     cmake \
     gcc \
     xsltproc \
     bison \
     flex \
-    gcc-multilib \
-    pkg-config \ 
-    libssl-dev \
+    gcc-9-multilib \
+    pkg-config:i386 \
     libssl-dev:i386 \
     libc6-dev:i386 \
     libusb-1.0-0-dev:i386 \
-    libusb-1.0.0-dev \
     libjson-c-dev:i386 \
     openjdk-8-jre \
-    curl 
-
+    curl \
+    g++-9-multilib \
+    libstdc++-9-dev \
+ && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 20 \
+ && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
+ && update-alternatives --set c++ /usr/bin/g++

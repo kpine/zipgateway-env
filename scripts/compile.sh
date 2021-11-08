@@ -31,11 +31,11 @@ cp -v ${SCRIPT_FILES}/zipgateway.cfg ${BIN_DIR}/zipgateway.cfg
 cp -v ${SCRIPT_FILES}/zipgateway.tun ${BIN_DIR}/zipgateway.tun
 
 case $ZIPGATEWAY_VERSION in
-  "2.81.03")
+  "2.*.*")
     cp -v ${BUILD_DIR}/zipgateway ${BIN_DIR}
     ;;
 
-  "7.11.01")
+  "7.*.*")
     cp -v ${BUILD_DIR}/src/zipgateway ${BIN_DIR}
     ;;
 esac
