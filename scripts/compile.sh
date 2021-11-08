@@ -31,7 +31,7 @@ cp -v ${SCRIPT_FILES}/zipgateway.cfg ${BIN_DIR}/zipgateway.cfg
 cp -v ${SCRIPT_FILES}/zipgateway.tun ${BIN_DIR}/zipgateway.tun
 
 case $ZIPGATEWAY_VERSION in
-  "2.*.*")
+  "2.81.03")
     cp -v ${BUILD_DIR}/zipgateway ${BIN_DIR}
     ;;
 
