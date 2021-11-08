@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     g++-9-multilib \
     libstdc++-9-dev \
+    iproute2 \
  && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 20 \
  && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
  && update-alternatives --set c++ /usr/bin/g++
