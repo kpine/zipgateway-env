@@ -5,6 +5,7 @@ SCRIPTS_DIR=$(realpath ./scripts)
 BIN_DIR=$(realpath ./bin)
 ZGW_CLI=$(realpath ./zgw)
 MOUNTS=()
+USB_PATH=${USB_PATH:-/dev/ttyUSB0}
 
 case $1 in
   "build")
@@ -17,6 +18,6 @@ case $1 in
      MOUNTS+=(-v $ZIPGATEWAY_SRC:/app/zipgateway-source)
      MOUNTS+=(--mount type=bind,source=$ZGW_CLI,target=/usr/local/sbin/zgw)
 
-    docker run --net=host -i -t ${MOUNTS[*]} --device=/dev/ttyUSB0 --cap-add=ALL --device=/dev/net/tun $GRIZZLY_IMAGE /bin/bash 
+    docker run --net=host -i -t ${MOUNTS[*]} --device=$USB_PATH --cap-add=ALL --device=/dev/net/tun $GRIZZLY_IMAGE /bin/bash
      ;;
 esac
