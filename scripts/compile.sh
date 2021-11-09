@@ -27,6 +27,8 @@ cp -v ${WRT_PACKAGE_FILES_DIR}/Portal.ca_x509.pem ${BIN_DIR}
 cp -v ${WRT_PACKAGE_FILES_DIR}/ZIPR.key_1024.pem ${BIN_DIR}
 cp -v ${WRT_PACKAGE_FILES_DIR}/ZIPR.x509_1024.pem ${BIN_DIR}
 
+cp -v ${SOURCE_DIR}/files/zipgateway_provisioning_list.cfg ${BIN_DIR}
+
 cp -v ${SCRIPT_FILES}/zipgateway.cfg ${BIN_DIR}/zipgateway.cfg
 cp -v ${SCRIPT_FILES}/zipgateway.tun ${BIN_DIR}/zipgateway.tun
 
